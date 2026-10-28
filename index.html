@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLASSVERSE Neon 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="animated-bg">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="grid"></span>
+  </div>
+
+  <header class="topbar glass">
+    <div>
+      <p class="eyebrow">IMMERSIVE SCHOOL PLATFORM</p>
+      <h1>CLASSVERSE <span>Neon 3D</span></h1>
+    </div>
+    <div class="top-actions">
+      <div class="live-pill">
+        <span class="pulse"></span>
+        <span id="liveClock">--:--:--</span>
+      </div>
+      <button class="btn btn-outline" id="resetViewBtn">Кампусқа оралу</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="left-panel glass">
+      <div class="panel-head">
+        <p class="eyebrow">3D НАВИГАЦИЯ</p>
+        <h2>Бөлмелерге кіру</h2>
+        <p class="muted">Төмендегі батырмалар арқылы кампустағы негізгі кеңістіктерге бірден кіріңіз немесе 3D көріністегі ғимараттарды басыңыз.</p>
+      </div>
+
+      <div class="room-list" id="roomList"></div>
+
+      <div class="quote-card neon-card">
+        <p class="eyebrow">КҮННІҢ ДӘЙЕКСӨЗІ</p>
+        <blockquote id="quoteText">«Білім – болашақтың ең жарық энергиясы.»</blockquote>
+      </div>
+    </section>
+
+    <section class="viewer-shell glass">
+      <div id="sceneContainer" aria-label="3D campus"></div>
+      <div class="scene-overlay">
+        <div class="scene-badge glass-mini">
+          <span class="pulse"></span>
+          <span>Interactive 3D Campus</span>
+        </div>
+        <div class="scene-hint glass-mini">Тінтуірмен айналдырыңыз • Дөңгелекпен zoom • Объектіні басыңыз</div>
+      </div>
+    </section>
+
+    <aside class="right-panel glass">
+      <div class="info-header">
+        <p class="eyebrow">SMART ROOM PANEL</p>
+        <h2 id="infoTitle">Кампус орталығы</h2>
+        <p id="infoSubtitle" class="muted">Алдымен бөлмені таңдаңыз. Сонда оның сипаттамасы, негізгі мүмкіндіктері мен жылдам әрекеттері шығады.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat neon-card">
+          <span>Белсенді бөлме</span>
+          <strong id="activeRoom">Campus</strong>
+        </div>
+        <div class="stat neon-card">
+          <span>Режим</span>
+          <strong id="viewMode">Explorer</strong>
+        </div>
+      </div>
+
+      <div class="detail-card neon-card">
+        <h3>Негізгі функциялар</h3>
+        <ul id="featureList"></ul>
+      </div>
+
+      <div class="detail-card neon-card">
+        <h3>Жылдам әрекеттер</h3>
+        <div class="actions" id="quickActions"></div>
+      </div>
+    </aside>
+  </main>
+
+  <section class="bottom-dock glass">
+    <div class="dock-card">
+      <span class="dock-label">Бүгінгі фокус</span>
+      <strong>STEM • AI • Teamwork</strong>
+    </div>
+    <div class="dock-card">
+      <span class="dock-label">Пайдалы сілтеме</span>
+      <a href="https://kundelik.kz" target="_blank" rel="noopener">kundelik.kz</a>
+    </div>
+    <div class="dock-card">
+      <span class="dock-label">Музыка</span>
+      <a href="https://www.youtube.com/watch?v=05d17EqHzcc&list=RD05d17EqHzcc&start_radio=1" target="_blank" rel="noopener">Hit song</a>
+    </div>
+    <div class="dock-card">
+      <span class="dock-label">Статус</span>
+      <strong>Neon Campus Online</strong>
+    </div>
+  </section>
+
+  <div class="floating-panel glass hidden" id="floatingPanel">
+    <div class="floating-top">
+      <div>
+        <p class="eyebrow">ROOM DETAILS</p>
+        <h3 id="floatingTitle">Бөлме атауы</h3>
+      </div>
+      <button class="icon-btn" id="closeFloating">✕</button>
+    </div>
+    <p id="floatingDescription" class="muted"></p>
+    <div class="floating-actions" id="floatingActions"></div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
